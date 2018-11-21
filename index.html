@@ -151,7 +151,7 @@ code {
     padding: 1px 2px;
     border-radius: 3px;
 }
-#result {
+/* #result {
     text-align: center!important;
     display: block;
     width: 100%;
@@ -161,7 +161,7 @@ code {
     word-wrap: break-word;
     word-break: break-all;
     line-height: 1.4em;
-}
+} */
 </style>
 </head>
 <body>
@@ -198,7 +198,7 @@ code {
     </tr>
     <tr>
         <td colspan="2">
-            <span id="result"></span>
+            <input id="result" type="text" placeholder="result">
         </td>
     </tr>
     <tr>
@@ -234,7 +234,7 @@ code {
                 var key = (hmac.value || '').trim();
                 if(key){
                     var pwd = encrpty.b64_hmac(key, str);
-                    $('result').innerHTML = pwd.replace(/\W/g, '').substring(0, value);
+                    $('result').value = pwd.replace(/\W/g, '').substring(0, value);
                     localStorage.setItem('_1pwd_type_', t);
                     localStorage.setItem('_1pwd_leng_', value);
                 } else {
